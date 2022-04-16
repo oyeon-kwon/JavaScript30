@@ -58,7 +58,17 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  function playSound(e) {
+    // audio 태그와 key 태그들을 변수를 선언해서 할당
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+    const key = document.querySelector(`div[data-key="${e.keyCode}"`)
 
+    key.classList.add('playing');
+    audio.play();
+  }
+
+  // 전체 객체에 이벤트 객체 붙이기
+  window.addEventListener('keydown', playSound)
 </script>
 
 
